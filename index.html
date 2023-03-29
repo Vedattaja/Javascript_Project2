@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>To do list</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  
+
+
+  <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-24 text-center mt-5">
+        <h3>Welcome to Movies, please select your preferred theater from the list</h3>
+      </div>
+    </div>
+
+
+
+    <div class="row justify-content-left">
+      <div class="col-md-12">
+        <div class="form-group">
+          <select id="theaters" class="form-control"></select>
+        </div>        
+        <div class="col-md-3">
+          <button type="button" id="nappi" class="btn btn-primary btn-block" onclick="getSalit()">Movie listing</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-xxl-4 p-3">
+        <div id="dataContainer"></div>        
+      </div>
+      <div class="col-xxl-4 p-3"></div>
+        <div id="imageContainer"></div>
+      </div>    
+      <div class="col-xxl-4 p-3 mt-3 g-3"></div>
+        <div id="showsContainer"></div>          
+      </div>  
+    </div>
+  </div>
+  <div class="container"></div>
+  
+
+
+  <script src="script2.js" charset="utf-8"></script>
+</body>
+
+</html>
