@@ -7,8 +7,7 @@ function getSalit(){
     req.addEventListener("load",function(){ //Event listener that listens to incoming traffic from FinnkinoAPI
         const res = req.responseText;   //save the response text to a variable        
         const xmlDocument = new DOMParser().parseFromString(res, "text/xml"); //The response is formatted into xml format        
-        const TheatreArea = xmlDocument.querySelectorAll("TheatreArea"); //every "TheatreArea" object is selected
-        //const theatersDropdown = document.getElementById('theaters');
+        const TheatreArea = xmlDocument.querySelectorAll("TheatreArea"); //every "TheatreArea" object is selected        
         for (const theater of TheatreArea) {    //for loop that loops over the list of TheatreArea objects
             const id = theater.querySelector("ID").textContent; //from each TheatreArea object the ID gets inputted into a variable
             const name = theater.querySelector("Name").textContent; //from each TheatreArea object the Name gets inputted into a variable
@@ -57,11 +56,6 @@ function getMovies(shows){
     elokuvaNimet = []; //empty list for storing the movie names
     for (const elokuva of shows){   //for loop for going through the shows 
         const nimi = elokuva.querySelector("Title");    //Movie name is selected from the elokuva variable with query selector
-        //const sali = elokuva.querySelector("Theatre");
-        //console.log(nimi,sali);
-        //const movieInfo = document.createElement('div');
-        //const nimiElement = document.createElement('p');
-        //nimiElement.textContent = nimi.textContent;
         if (!elokuvaNimet.includes(nimi.textContent)) { //returns true if the movie title is not in the list
             elokuvaNimet.push(nimi.textContent); //adds the movie title to the list elokuvaNimet
         };
@@ -145,8 +139,6 @@ function displayNextShows(movieName, data) {
     //fucntion for displaying the starting time of next shows 
     const showsContainer = document.getElementById('showsContainer'); //gets the showsContainer by Id
     showsContainer.innerHTML = ''; // Clear previous shows, if any
-    //const theatersDropdown = document.getElementById('theaters'); //
-    //const selectedTheaterId = theatersDropdown.value;
     const showsList = getNextShow(movieName, data);    //get list of shows
     const listTitle = document.createElement('h3'); //create h3 object for information
     listTitle.textContent = `Elokuvan ${movieName} seuraavat näytökset:`; //assign the information for the listTitle
