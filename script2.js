@@ -141,7 +141,7 @@ function displayNextShows(movieName, data) {
     showsContainer.innerHTML = ''; // Clear previous shows, if any
     const showsList = getNextShow(movieName, data);    //get list of shows
     const listTitle = document.createElement('h3'); //create h3 object for information
-    listTitle.textContent = `Elokuvan ${movieName} seuraavat näytökset:`; //assign the information for the listTitle
+    listTitle.textContent = `Todays shows for ${movieName} are following:`; //assign the information for the listTitle
     showsContainer.appendChild(listTitle); //append the text to the webpage
 
     for (var i = 0; i < showsList.length; i++) { //for loop that loops through the shows
