@@ -22,7 +22,7 @@ function getSalit(){
     })
 
     req.send() //sends the request
-    //return saliLista;
+    
 }
 
 function createDropdownOptions(saliLista) {
